@@ -1,0 +1,96 @@
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family    : 'Open-Sans', sans-serif;
+    min-height     : 100vh;
+    width          : 100%;
+    background     : linear-gradient(20deg, rgb(20, 20, 20), rgb(51, 51, 51));
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.loading-container {
+    position: relative;
+    height  : 100px;
+}
+
+.layer {
+    position  : absolute;
+    left      : 50%;
+    height    : 50px;
+    width     : 50px;
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.3);
+    transform : translate(-50%) rotateX(50deg) rotateY(0) rotateZ(45deg);
+}
+
+.layer.one {
+    background     : #eb7d52;
+    top            : 1.5em;
+    /* animation */
+    animation      : movedown 1.4s ease-in-out infinite;
+    animation-delay: 0.7s;
+}
+
+.layer.two {
+    background: #7bc9d1;
+    top       : 0.75em;
+}
+
+.layer.three {
+    background: #99d6b4c0;
+    /* animation */
+    animation : moveup 1.4s ease-in-out infinite;
+}
+
+p {
+    text-transform: uppercase;
+    color         : #fff;
+    font-size     : 1.1em;
+    letter-spacing: 1.5px;
+    /* fade animation */
+    animation: fadeAnimation 1.4s infinite;
+}
+
+/* animations */
+
+@keyframes fadeAnimation {
+    0%,
+    100% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+@keyframes movedown {
+
+    0%,
+    65%,
+    100% {
+        top: 1.5em;
+    }
+
+    25% {
+        top: 2em;
+    }
+}
+
+@keyframes moveup {
+
+    0%,
+    65%,
+    100% {
+        top: 0em;
+    }
+
+    25% {
+        top: -0.5em;
+    }
+}
